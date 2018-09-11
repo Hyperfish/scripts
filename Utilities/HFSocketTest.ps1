@@ -1,6 +1,6 @@
 ﻿function testAPP
 {
-$appep = @("a1.hyperfish.com","a2.hyperfish.com")
+$appep = @("a2.hyperfish.com")
 $appport = "443"
 
     foreach ($endpoint in $appep)
