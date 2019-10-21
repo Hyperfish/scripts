@@ -15,8 +15,8 @@ Write-Host "Checking for AAD PS Module..."
 Connect-AzureAD | Out-Null
 
 #check for Hyperfish Service Application
-    if (Get-AzureADServicePrincipal | Where-Object {$_.DisplayName -eq 'Hyperfish Service'}) {
-    $hfSP = Get-AzureADServicePrincipal | Where-Object {$_.DisplayName -eq 'Hyperfish Service'}
+    if (Get-AzureADServicePrincipal -all $true | Where-Object {$_.DisplayName -eq 'Hyperfish Service'}) {
+    $hfSP = Get-AzureADServicePrincipal -all $true | Where-Object {$_.DisplayName -eq 'Hyperfish Service'}
     Write-Host "Found application" $hfSP.DisplayName "with OID" $hfSP.ObjectId
     } else {
         Write-Host "Hyperfish Service not found in this AAD Tenant"
